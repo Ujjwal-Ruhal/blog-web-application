@@ -1,3 +1,532 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  background-color: #f5f7fa;
+  color: #1f2937;
+
+  line-height: 1.6;
+}
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+#navbar {
+  width: 100%;
+
+  background-color: #ffffff;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  padding: 0 30px;
+}
+
+#nav-content {
+  min-height: 65px;
+
+  display: flex;
+  align-items: center;
+
+  list-style: none;
+}
+
+/* Website Logo */
+
+#firstlist {
+  margin-right: auto;
+}
+
+#firstlist a {
+  color: #111827;
+
+  text-decoration: none;
+
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* Navigation Items */
+
+#nav-content li:not(#firstlist) {
+  margin-left: 25px;
+}
+
+/* Navigation Links */
+
+#nav-content li a {
+  position: relative;
+
+  display: inline-block;
+
+  padding: 8px 2px;
+
+  color: #374151;
+
+  text-decoration: none;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  transition: color 0.2s ease;
+}
+
+/* Navigation Hover */
+
+#nav-content li a:hover {
+  color: #2563eb;
+}
+
+/* Hover Underline */
+
+#nav-content li:not(#firstlist) a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  background-color: #2563eb;
+
+  transition: width 0.25s ease;
+}
+
+#nav-content li:not(#firstlist) a:hover::after {
+  width: 100%;
+}
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+
+#main-container {
+  width: min(1100px, 90%);
+
+  margin: 40px auto;
+
+  /* Pushes footer to bottom when
+       content is short */
+  flex: 1;
+}
+
+/* ========================================
+   HOME PAGE
+======================================== */
+
+.home-section {
+  width: 100%;
+}
+
+.page-title {
+  margin-bottom: 30px;
+
+  color: #111827;
+
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.section-title {
+  margin-bottom: 20px;
+
+  color: #374151;
+
+  font-size: 1.4rem;
+}
+
+/* ========================================
+   POSTS
+======================================== */
+
+.posts-container {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 25px;
+}
+
+.post-card {
+  padding: 25px;
+
+  background-color: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.post-title {
+  margin-bottom: 12px;
+
+  color: #111827;
+
+  font-size: 1.4rem;
+}
+
+.post-content {
+  margin-bottom: 20px;
+
+  color: #4b5563;
+
+  line-height: 1.7;
+
+  white-space: pre-wrap;
+}
+
+/* ========================================
+   POST ACTIONS
+======================================== */
+
+.post-actions {
+  display: flex;
+
+  gap: 10px;
+}
+
+.post-actions form {
+  margin: 0;
+}
+
+.btn {
+  padding: 8px 16px;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Edit */
+
+.btn-edit {
+  background-color: #2563eb;
+
+  color: #ffffff;
+}
+
+.btn-edit:hover {
+  background-color: #1d4ed8;
+}
+
+/* Delete */
+
+.btn-delete {
+  background-color: #dc2626;
+
+  color: #ffffff;
+}
+
+.btn-delete:hover {
+  background-color: #b91c1c;
+}
+
+/* ========================================
+   EMPTY STATE
+======================================== */
+
+.empty-state {
+  padding: 50px 20px;
+
+  text-align: center;
+
+  background-color: #ffffff;
+
+  border: 1px dashed #d1d5db;
+
+  border-radius: 10px;
+}
+
+.empty-state h2 {
+  margin-bottom: 8px;
+
+  color: #374151;
+}
+
+.empty-state p {
+  color: #6b7280;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .page-title {
+    font-size: 1.6rem;
+  }
+
+  .posts-container {
+    grid-template-columns: 1fr;
+  }
+
+  .post-card {
+    padding: 20px;
+  }
+
+  .post-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+#footer {
+  width: 100%;
+
+  margin-top: auto;
+
+  padding: 18px 20px;
+
+  text-align: center;
+
+  background-color: #132242;
+
+  color: #d1d5db;
+
+  border-top: 1px solid #e5e7eb;
+}
+
+#footer p {
+  margin: 0;
+
+  font-size: 0.9rem;
+}
+
+/* ========================================
+   RESPONSIVE NAVBAR
+======================================== */
+
+@media (max-width: 600px) {
+  #navbar {
+    padding: 0 15px;
+  }
+
+  #nav-content {
+    min-height: auto;
+
+    padding: 15px 0;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+  }
+
+  #firstlist {
+    width: 100%;
+
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  #nav-content li:not(#firstlist) {
+    margin-left: 0;
+    margin-right: 20px;
+  }
+}
+
+/* ========================================
+   BLOG FORM
+======================================== */
+
+.blog-form-container {
+    width: 100%;
+    max-width: 750px;
+
+    margin: 0 auto;
+}
+
+.blog-form {
+    padding: 30px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.form-title {
+    margin-bottom: 25px;
+
+    color: #111827;
+
+    font-size: 1.6rem;
+}
 
 
+/* Form Group */
 
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+
+/* Labels */
+
+.form-group label {
+    margin-bottom: 8px;
+
+    color: #374151;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+
+/* Input & Textarea */
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+
+    background-color: #ffffff;
+
+    color: #111827;
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Input Focus */
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* Textarea */
+
+.form-group textarea {
+    min-height: 220px;
+
+    resize: vertical;
+}
+
+
+/* Placeholder */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9ca3af;
+}
+
+
+/* ========================================
+   POST BUTTON
+======================================== */
+
+.post-btn {
+    width: 100%;
+
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: #2563eb;
+    color: #ffffff;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+.post-btn:hover {
+    background-color: #1d4ed8;
+}
+
+.post-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .blog-form {
+        padding: 20px;
+    }
+
+    .form-title {
+        font-size: 1.4rem;
+    }
+
+}
