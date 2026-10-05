@@ -1,0 +1,19 @@
+{
+  "name": "blog-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "types": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ujjwal Ruhal",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "ejs": "^7.0.1",
+    "express": "^5.2.1",
+    "nodemon": "^1.14.10"
+  }
+}
