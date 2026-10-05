@@ -1,13 +1,18 @@
 {
   "name": "blog-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "Blog Web Application built with Node.js, Express and EJS",
   "main": "index.js",
-  "types": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
-  "keywords": [],
+  "keywords": [
+    "nodejs",
+    "express",
+    "ejs",
+    "blog"
+  ],
   "author": "Ujjwal Ruhal",
   "license": "ISC",
   "type": "commonjs",

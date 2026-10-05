@@ -3,7 +3,7 @@ const path = require("path");
 
 const app = express();
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 let posts = [];
 let postId = 0;
 
@@ -45,7 +45,6 @@ app.get("/edit-post/:id", (req, res) => {
   console.log(post);
   res.render("edit", { post });
   res.status(200);
-
 });
 
 app.post("/update-post/:id", (req, res) => {
